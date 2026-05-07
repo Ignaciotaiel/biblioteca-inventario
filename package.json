@@ -1,0 +1,63 @@
+{
+  "name": "biblioteca-app",
+  "version": "1.0.0",
+  "description": "Inventario de la Biblioteca Leopoldo Lugones",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "rebuild": "electron-rebuild -f -w better-sqlite3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ignaciotaiel/biblioteca-inventario.git"
+  },
+  "keywords": [
+    "biblioteca",
+    "inventario",
+    "electron",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ignaciotaiel/biblioteca-inventario/issues"
+  },
+  "homepage": "https://github.com/Ignaciotaiel/biblioteca-inventario#readme",
+  "dependencies": {
+    "better-sqlite3": "^12.9.0"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^26.0.12",
+    "electron-rebuild": "^3.2.9"
+  },
+  "build": {
+    "appId": "com.biblioteca.lugones",
+    "productName": "Biblioteca Leopoldo Lugones",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "db/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "extraResources": [],
+    "win": {
+      "target": "nsis",
+      "icon": null
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerSidebar": null
+    },
+    "asar": false
+  }
+}
